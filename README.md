@@ -1,5 +1,5 @@
-# KAICD: A knowledge attention-based deep learning framework for automatic ICD coding
-
+# KAICD
+A knowledge attention-based deep learning framework for automatic ICD coding. 
 # Usage
 ## 1. How to preprocessing the raw data
 Firstly, you need to import the package. 
