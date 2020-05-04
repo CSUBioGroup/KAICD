@@ -1,1 +1,1 @@
-The folder is used to save the pretrained embedding matrices. 
+The pretrained embedding matrices are saved in this folder. 
