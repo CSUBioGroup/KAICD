@@ -1,5 +1,5 @@
 # Usage
-## How to preprocessing the raw data
+## 1. How to preprocessing the raw data
 Firstly, you need to import the package. 
 ```python
 from utils import *
@@ -20,7 +20,7 @@ mimic.get_basic_data(outPath='mimic3/data.csv', noteOutPath='mimic3/note_corpus.
 
 After doing this, you can get 3 new files: ***data.csv***, ***note_corpus.txt***, ***title_corpus.txt***. 
 
-## How to train the model
+## 2. How to train the model
 Firstly, you need import the package.
 ```python
 from utils import *
@@ -58,7 +58,7 @@ model.train(dataClass, trainSize=128, batchSize=256, epoch=1000,
 > **threshold** is the threshold in multi label prediction.  
 > **report** is a list of reported indicators after each epoch.  
 
-## How to do prediction
+## 3. How to do prediction
 ```python
 model.load(path="xxx.pkl", map_location="cpu", dataClass=dataClass)
 model.to_eval_mode()
