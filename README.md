@@ -10,13 +10,13 @@ mimic = MIMIC(ADMISSIONSPATH="ADMISSIONS.csv", NOTEEVENTSPATH="NOTEEVENTS.csv",
               DIAGNOSESICDPATH="DIAGNOSES_ICD.csv", DICDDIAGNOSESPATH="D_ICD_DIAGNOSES.csv")
 mimic.get_basic_data(outPath='mimic3/data.csv', noteOutPath='mimic3/note_corpus.txt', titleOutPath='mimic3/title_corpus.txt')
 ```
-> **ADMISSIONSPATH** is the path of "ADMISSIONS.csv" in MIMIC III. 
-> **NOTEEVENTSPATH** is the path of "NOTEEVENTS.csv" in MIMIC III. 
-> **DIAGNOSESICDPATH** is the path of "DIAGNOSES_ICD.csv" in MIMIC III. 
-> **DICDDIAGNOSESPATH** is the path of "D_ICD_DIAGNOSES.csv" in MIMIC III. 
-> **outPath** is the output path of preprocessed data. 
-> **noteOutPath** is the output path of clinck notes corpus which will be used to train note embedding. 
-> **titleOutPath** is the output path of ICD titles corpus which will be used to train title embedding. 
+> **ADMISSIONSPATH** is the path of "ADMISSIONS.csv" in MIMIC III.  
+> **NOTEEVENTSPATH** is the path of "NOTEEVENTS.csv" in MIMIC III.  
+> **DIAGNOSESICDPATH** is the path of "DIAGNOSES_ICD.csv" in MIMIC III.  
+> **DICDDIAGNOSESPATH** is the path of "D_ICD_DIAGNOSES.csv" in MIMIC III.  
+> **outPath** is the output path of preprocessed data.  
+> **noteOutPath** is the output path of clinck notes corpus which will be used to train note embedding.  
+> **titleOutPath** is the output path of ICD titles corpus which will be used to train title embedding.  
 
 After doing this, you can get 3 new files: ***data.csv***, ***note_corpus.txt***, ***title_corpus.txt***. 
 
@@ -32,12 +32,12 @@ dataClass = DataClass(dataPath='mimic3/data.csv', dicddiagnosesPath='D_ICD_DIAGN
 dataClass.vectorize(noteFeaSize=320, titleFeaSize=192, iters=10, 
                     noteCorpusPath=‘mimic3/note_corpus.txt’, loadCache=True)
 ```
-> **dataPath** is the path of "data.csv". 
-> **dicddiagnosesPath** is the path of "D_ICD_DIAGNOSES.csv". 
-> **noteMaxLen** is the maximum number of keeped words in clinic notes. The words with low TF-IDF will be removed. 
-> **noteFeaSize** is the embedding size of clinic notes. 
-> **titleFeaSize** is the embedding size of ICD titles. 
-> **iters** is the number of iterations in pretraining word embedding. 
+> **dataPath** is the path of "data.csv".  
+> **dicddiagnosesPath** is the path of "D_ICD_DIAGNOSES.csv".  
+> **noteMaxLen** is the maximum number of keeped words in clinic notes. The words with low TF-IDF will be removed.  
+> **noteFeaSize** is the embedding size of clinic notes.  
+> **titleFeaSize** is the embedding size of ICD titles.  
+> **iters** is the number of iterations in pretraining word embedding.  
 
 Finally, you can instance the model class and train the model. 
 ```python
@@ -49,14 +49,14 @@ model.train(dataClass, trainSize=128, batchSize=256, epoch=1000,
             savePath='model/KAICD', 
             metrics="MiF", report=["MiF", "MiAUC"])
 ```
-> **noteFeaSize** is the embedding size of clinic notes.  
-> **titleFeaSize** is the embedding size of ICD titles. 
-> **hiddenSize** is the hidden size of the BiRNN. 
-> **filterSize** is the filter size of the CNN. 
-> **embDropout**  is the dropout rate after embedding layer. 
-> **fcDropout** is the dropout rate before output layer. 
-> **threshold** is the threshold in multi label prediction. 
-> **report** is a list of reported indicators after each epoch. 
+> **noteFeaSize** is the embedding size of clinic notes.   
+> **titleFeaSize** is the embedding size of ICD titles.  
+> **hiddenSize** is the hidden size of the BiRNN.  
+> **filterSize** is the filter size of the CNN.  
+> **embDropout**  is the dropout rate after embedding layer.  
+> **fcDropout** is the dropout rate before output layer.  
+> **threshold** is the threshold in multi label prediction.  
+> **report** is a list of reported indicators after each epoch.  
 
 ## How to do prediction
 ```python
