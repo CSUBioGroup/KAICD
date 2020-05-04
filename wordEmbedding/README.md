@@ -1,0 +1,1 @@
+The folder is used to save the pretrained embedding matrices. 
