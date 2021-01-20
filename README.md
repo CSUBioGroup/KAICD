@@ -23,7 +23,7 @@ mimic.get_basic_data(outPath='mimic3/data.csv', noteOutPath='mimic3/note_corpus.
 After doing this, you can get 3 new files: ***data.csv***, ***note_corpus.txt***, ***title_corpus.txt***. 
 
 ## 2. How to train the model
-Firstly, you need import the package.
+Firstly, you need to import the package.
 ```python
 from utils import *
 from model import *
