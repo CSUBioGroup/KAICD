@@ -1,7 +1,7 @@
 # KAICD
 A knowledge attention-based deep learning framework for automatic ICD coding. 
 # Usage
-## 1. How to preprocessing the raw data
+## 1. How to preprocess the raw data
 Firstly, you need to import the package. 
 ```python
 from utils import *
